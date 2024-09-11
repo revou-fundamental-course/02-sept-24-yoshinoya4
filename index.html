@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset='utf-8'>
+    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+    <title>Page Title</title>
+    <meta name='viewport' content='width=device-width, initial-scale=1'>
+    <link rel="stylesheet" href="css/aset.css">
+    <link rel='stylesheet' type='text/css' media='screen' href='main.css'>
+    <link rel="stylesheet" type="text/css" href="css/style.css">
+    <script type="js/script.js"></script>
+</head>
+<body>
+ <center>
+     <h1>Welcome To Katik</h1>
+     <p>Hai Sobat, Selamat datang di Katik</p>
+     <p>Sebuah web apps sederhana yang berfungsi untuk menghitung nilai luas dan keliling bangun datar</p>
+ </center>
+
+ <div class="header1">
+     <center>
+         <h3>Segitiga</h3>  
+     </center>
+ </div>
+
+ <div class="header2">
+      <center>
+      <h3>Jajar Genjang</h3>
+  </center>
+ </div>
+
+ <div class="header1">
+     <center>
+         <h3>Luas Segitiga</h3>  
+         <img src="aset/img/62288763c6d64.png">
+     </center>
+     <p>Rumus Keliling Segitiga Yaitu :</p>
+     <p></p>
+     <p>K= S1 + S2 + S3</p>
+
+ </div>
+
+  <div class="header3">
+    <center>
+        <h1>Hitung Keliling Segitiga</h1>
+        <label for="side1">Sisi 1:</label>
+        <input type="number" id="side1" placeholder="Masukkan sisi 1">
+        
+        <label for="side2">Sisi 2:</label>
+        <input type="number" id="side2" placeholder="Masukkan sisi 2">
+        
+        <label for="side3">Sisi 3:</label>
+        <input type="number" id="side3" placeholder="Masukkan sisi 3">
+        
+        <button onclick="calculatePerimeter()">Hitung Keliling</button>
+        
+        <div class="result" id="result"></div>
+    </center>
+  </div>
+
+<script>
+     function calculatePerimeter() {
+           
+            var side1 = parseFloat(document.getElementById('side1').value);
+            var side2 = parseFloat(document.getElementById('side2').value);
+            var side3 = parseFloat(document.getElementById('side3').value);
+
+           
+            if (isNaN(side1) || isNaN(side2) || isNaN(side3)) {
+                document.getElementById('result').innerText = 'Harap masukkan nilai yang valid untuk semua sisi.';
+                return;
+            }
+
+           
+            var perimeter = side1 + side2 + side3;
+
+            
+            document.getElementById('result').innerText = 'Keliling Segitiga: ' + perimeter;
+        }
+    
+</script>
+  
+
+
+  <br>
+  <br>
+  <br>
+  <br>
+
+
+ <div class="header4">
+     <center>
+         <h3>Luas Segitiga</h3>  
+         <img src="aset/img/62288763c6d64.png">
+     </center>
+     <p>Rumus Luas Segitiga Yaitu :</p>
+     <p></p>
+     <p>L = 1/2 x a x t</p>
+
+ </div>
+
+
+   <div class="header5">
+        <h1>Hitung Luas Segitiga</h1>
+        <form id="triangle-form">
+            <label for="base">Panjang Alas (a):</label>
+            <input type="number" id="base" required>
+            
+            <label for="height">Tinggi (t):</label>
+            <input type="number" id="height" required>
+            
+            <button type="button" onclick="calculateArea()">Hitung Luas</button>
+        </form>
+        <div id="result">
+            <p>Luas Segitiga: <span id="area">0</span> unit²</p>
+        </div>
+    </div>
+
+    <script>
+       function calculateArea() {
+    // Mendapatkan nilai dari input
+    const base = parseFloat(document.getElementById('base').value);
+    const height = parseFloat(document.getElementById('height').value);
+    
+    // Validasi input
+    if (isNaN(base) || isNaN(height) || base <= 0 || height <= 0) {
+        alert('Mohon masukkan nilai yang valid untuk panjang alas dan tinggi.');
+        return;
+    }
+    
+    // Menghitung luas segitiga
+    const area = 0.5 * base * height;
+    
+    // Menampilkan hasil
+    document.getElementById('area').textContent = area.toFixed(2);
+}
+        
+    </script>
+
+</body>
+</html>
